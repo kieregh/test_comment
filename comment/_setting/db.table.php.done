@@ -1,0 +1,3 @@
+<?php
+$table[$module.'object'] = $DB['head'].'_'.$module.'_object'; // 댓글 오브젝트 세팅
+?>

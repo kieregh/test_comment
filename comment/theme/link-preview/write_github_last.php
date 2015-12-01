@@ -1,0 +1,225 @@
+<link rel="stylesheet" href="<?php echo $g['url_comment_skin']?>/css/write_style.css">
+<script type="text/script" src="<?php echo $g['url_comment_skin']?>/js/jquery.js" ></script>
+<script type="text/script" src="<?php echo $g['url_comment_skin']?>/js/app.js" ></script>
+<script type="text/script" src="<?php echo $g['url_comment_skin']?>/js/jquerygeocomplete.js" ></script>
+<script type="text/script" src="<?php echo $g['url_comment_skin']?>/js/loader.js" ></script>
+
+
+<div class="floader hide">
+       <div class="text-center mg-top">
+               <img src="<?php echo $g['dir_comment_skin']?>img/floader.gif">
+        </div>
+</div>
+ <form name="cmtform" id="cmtform">
+    <input type="hidden" name="parent" value="<?php echo $d['comment']['parent']?>" />
+    <input type="hidden" name="parentmbr" value="<?php echo $R['mbruid']?>" />
+    <input type="hidden" name="uid" value="<?php echo $C['uid']?>" />
+    <input type="hidden" name="upfiles" id="upfilesValue" value="<?php echo $C['upload']?>" />
+     <input type="hidden" name="pcode" value="<?php echo $date['totime']?>" />
+    <input type="hidden" name="theme" value="<?php echo $g['dir_comment_skin']?>" /><!-- 테마값  -->
+    <input type="hidden" name="feed_table" value="<?php echo $d['comment']['feed_table']?>" /><!-- 피드백 받을 테이블명  -->
+    <input type="hidden" name="c_sort" value="<?php echo $d['comment']['sort']?>" /><!-- sort  -->
+    <input type="hidden" name="c_orderby" value="<?php echo $d['comment']['orderby1']?>" /><!-- sort  -->
+    <input type="hidden" name="c_recnum" value="<?php echo $d['comment']['recnum']?>" /><!-- 출력수  -->
+    <input type="hidden" name="c_page" value="1" /><!-- 페이지값 -->
+    <input type="hidden" name="content" value="" />
+    <input type="hidden" name="html" value="HTML" />
+ </form>
+
+<div class="rb-status-box shareForm">
+     <input id="fileupload" type="file" class="hide" name="files[]" multiple>
+       <div class="timeline-body">
+         <div class="share-form">
+              <ul class="post-types">
+                <li class="post-type">
+                  <a href="#" class="shareType-tab" id="status"><i class="fa fa-file"></i> Status</a>
+                </li>
+                <li class="post-type">
+                  <a href="#" class="shareType-tab" id="photos"><i class="fa fa-camera"></i> Photos</a>
+                </li>
+                <li class="post-type">
+                  <a href="#" class="shareType-tab" id="video"><i class="fa fa-film"></i> Video</a>
+                </li>
+                <li class="post-type">
+                  <a href="#" class="shareType-tab" id="place"><i class="fa fa-map-marker"></i> Place</a>
+                </li>
+              </ul>
+              <div class="share">
+                    <div class="arrow"></div>
+                    <div id="status-box" class="shareType-box">
+                         <textarea placeholder="What's on your mind ?" style="height: 62px; overflow: hidden;" class="form-control message" id="status_message" rows="10" cols="40" name="message"></textarea> 
+                    </div>
+                    <div id="photos-box" class="shareType-box hide">
+                        <div id="files" class="files"></div> <!--upload 파일 출력되는 곳 -->
+                    </div>
+                    <div id="video-box" class="shareType-box hide">
+                       <input type="text" name="videoUrl" id="videoUrl" placeholder="Youtube or Vimeo video URL" class="form-control">
+                    </div>
+                    <div id="place-box" class="shareType-box hide">
+                      <input type="text" placeholder="Enter a location" name="location" class="form-control" id="geocomplete" autocomplete="off">
+                      <div class="map_canvas" style="position: relative; background-color: rgb(229, 227, 223); overflow: hidden;"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;" class="gm-style"><div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(&quot;http://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit; display: block;" aria-hidden="true"></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit; display: block;" aria-hidden="true"></div></div></div><div style="position: absolute; z-index: 0;"><div style="overflow: hidden;"></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div></div>
+                      <input type="hidden" name="lat">
+                      <input type="hidden" name="lng">
+                    </div>
+                    <input type="hidden" value="status" id="shareType" name="shareType">
+              </div>
+          </div>
+      </div>
+      <div class="timeline-footer clearfix">
+        <div class="pull-right">
+          <input type="submit" class="btn btn-primary" id="btn-share" value="Post" name="submit">
+        </div>
+      </div>
+    </form>
+ </div>
+ <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/vendor/jquery.ui.widget.js"></script>
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/load-image.all.min.js"></script> 
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/canvas-to-blob.min.js"></script>
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/jquery.iframe-transport.js"></script>
+<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
+<!--[if (gte IE 8)&(lt IE 10)]>
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/cors/jquery.xdr-transport.js"></script>
+<![endif]-->
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/jquery.fileupload.js"></script>
+<!-- The File Upload processing plugin -->
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/jquery.fileupload-process.js"></script>
+<!-- The File Upload image preview & resize plugin -->
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/jquery.fileupload-image.js"></script>
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/jquery.fileupload-video.js"></script>
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/jquery.fileupload-audio.js"></script>
+<script src="<?php echo $g['url_comment_skin']?>/js/file_upload/jquery.fileupload-validate.js"></script>
+ <script>
+  // shareType 변경 스크립트 
+  function setSharetypebox(shareType)
+  {
+     $('.shareType-box').addClass('hide');
+     $('#status-box').removeClass('hide');
+     $('#'+shareType+'-box').removeClass('hide');      
+  }
+  $('.rb-status-box').on('click','.shareType-tab', function(e) { 
+       e.preventDefault();
+       var shareType=$(this).attr('id');
+        var positionArray = {};
+        positionArray['status'] = 0;
+        positionArray['photos'] = 80;
+        positionArray['video'] = 160;
+        positionArray['place'] = 231;        
+        $('input[name="shareType"]').val(shareType); // share 타입 저장
+        $('.arrow').css("left", positionArray[shareType]); // 화살표 이동
+         setSharetypebox($(this).attr('id'));
+       return false;
+  });
+ /*************************  파일업로드 스크립트 ******/
+ 
+ // 포토버튼 클릭시 파일선택 이벤트
+$('#photos').on('click',function(e){
+   e.preventDefault();
+   $('#fileupload').click();
+});
+
+/*jslint unparam: true, regexp: true */
+/*global window, $ */
+$(function () {
+    'use strict';
+    // Change this to the location of your server-side upload handler:
+    var url = '<?php echo $g['url_comment_skin']?>/php/',
+        uploadButton = $('<button/>')
+            .addClass('btn btn-primary')
+            .prop('disabled', true)
+            .text('Processing...')
+            .on('click', function () {
+                var $this = $(this),
+                    data = $this.data();
+                $this
+                    .off('click')
+                    .text('Abort')
+                    .on('click', function () {
+                        $this.remove();
+                        data.abort();
+                    });
+                data.submit().always(function () {
+                    $this.remove();
+                });
+            });
+    $('#fileupload').fileupload({
+        url: url,
+        dataType: 'json',
+        autoUpload: true,
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+        maxFileSize: 999000,
+        // Enable image resizing, except for Android and Opera,
+        // which actually support image resizing, but fail to
+        // send Blob objects via XHR requests:
+        disableImageResize: /Android(?!.*Chrome)|Opera/
+            .test(window.navigator.userAgent),
+        previewMaxWidth: 100,
+        previewMaxHeight: 100,
+        previewCrop: true
+    }).on('fileuploadadd', function (e, data) {
+        data.context = $('<div/>').appendTo('#files');
+        $.each(data.files, function (index, file) {
+            var node = $('<p/>')
+                    .append($('<span/>').text(file.name));
+            if (!index) {
+                node
+                    .append('<br>')
+                    .append(uploadButton.clone(true).data(data));
+            }
+            node.appendTo(data.context);
+        });
+    }).on('fileuploadprocessalways', function (e, data) {
+        var index = data.index,
+            file = data.files[index],
+            node = $(data.context.children()[index]);
+        if (file.preview) {
+            node
+                .prepend('<br>')
+                .prepend(file.preview);
+        }
+        if (file.error) {
+            node
+                .append('<br>')
+                .append($('<span class="text-danger"/>').text(file.error));
+        }
+        if (index + 1 === data.files.length) {
+            data.context.find('button')
+                .text('Upload')
+                .prop('disabled', !!data.files.error);
+        }
+    }).on('fileuploadprogressall', function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#progress .progress-bar').css(
+            'width',
+            progress + '%'
+        );
+    }).on('fileuploaddone', function (e, data) {
+        $.each(data.result.files, function (index, file) {
+            if (file.url) {
+                var link = $('<a>')
+                    .attr('target', '_blank')
+                    .prop('href', file.url);
+                $(data.context.children()[index])
+                    .wrap(link);
+            } else if (file.error) {
+                var error = $('<span class="text-danger"/>').text(file.error);
+                $(data.context.children()[index])
+                    .append('<br>')
+                    .append(error);
+            }
+        });
+    }).on('fileuploadfail', function (e, data) {
+        $.each(data.files, function (index) {
+            var error = $('<span class="text-danger"/>').text('File upload failed.');
+            $(data.context.children()[index])
+                .append('<br>')
+                .append(error);
+        });
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+});
+</script>
+ </script>

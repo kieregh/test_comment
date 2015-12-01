@@ -1,0 +1,245 @@
+
+.timeline {
+    list-style: outside none none;
+    padding: 20px 0;
+}
+.profile-cover {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
+}
+.rb-status-box {
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.176);
+    position: relative;
+}
+.timeline-title {
+    color: inherit;
+    margin-top: 0;
+}
+.timeline-body > p, .timeline-body > ul {
+    margin-bottom: 0;
+    padding: 20px;
+}
+.timeline-body > p + p {
+    margin-top: 5px;
+}
+.timeline-footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+.timeline-footer > a {
+    cursor: pointer;
+    text-decoration: none;
+}
+.timeline-header {
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+.facebook-share-box {
+    width: 100%;
+}
+.facebook-share-box .share-form {
+    padding: 2%;
+}
+.facebook-share-box .share {
+    background: white none repeat scroll 0 0;
+    border: 2px solid #dddddd;
+    clear: both;
+    margin-bottom: 10px;
+    position: relative;
+    transition: height 0.1s ease-out 0s;
+}
+.facebook-share-box .share .arrow {
+    background: #dddddd url("../img/arrow.png") no-repeat scroll 0 0;
+    display: inline;
+    height: 10px;
+    left: 4px;
+    position: absolute;
+    top: -10px;
+    transition: all 0.3s ease-out 0s;
+    width: 14px;
+}
+.facebook-share-box .post-types li a {
+    color: #085083;
+    text-decoration: none;
+}
+.facebook-share-box .post-types li a.active {
+    color: #404040;
+}
+.facebook-share-box .post-types {
+    padding-left: 5px;
+}
+.facebook-share-box ul {
+    list-style: outside none none;
+    margin-bottom: 9px;
+}
+.facebook-share-box .post-types li {
+    display: inline;
+    margin-right: 10px;
+}
+.facebook-share-box input[type="text"] {
+    border: medium none;
+}
+.facebook-share-box .message {
+    border:none;
+    box-shadow: none;
+}
+.mg-top {
+    margin-top: 10%;
+}
+.map_canvas {
+    height: 150px;
+}
+.videowrapper {
+    clear: both;
+    float: none;
+    height: 0;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    position: relative;
+    width: 100%;
+}
+.videowrapper iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.timeline.affix {
+    width: 33%;
+}
+@media (max-width: 767px) {
+.timeline.affix {
+    position: static;
+    top: 0;
+    width: auto;
+}
+}
+
+/*status*/
+
+.rb-status {
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 3px;
+}
+
+.rb-status .panel-heading:before,
+.rb-status .panel-footer:before {
+    display: table;
+    content: " ";
+}
+.rb-status .panel-heading:after,
+.rb-status .panel-footer:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.rb-status .panel-heading .rb-spinner {
+    float: right;
+}
+.rb-status .panel-heading .panel-title {
+    float: left;
+}
+.rb-status.panel-default>.panel-heading {
+    color: #333;
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+.rb-status .panel-body {
+    padding: 0
+}
+.rb-status .media-left{
+    padding: 12px 0 0 12px;
+}
+.rb-status .media-body {
+    padding: 10px 0;
+}
+.rb-status textarea {
+    min-height: 30px !important;
+    max-height: 300px;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    resize: none
+}
+
+.rb-status .form-control:focus::-webkit-input-placeholder {color: #ccc}
+.rb-status .form-control:focus:-moz-placeholder {color: #ccc}
+.rb-status .form-control:focus::-moz-placeholder {color: #ccc}
+.rb-status .form-control:focus:-ms-input-placeholder {color: #ccc}
+
+.rb-status .form-control[disabled] {
+    background-color: #fff;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.rb-status .bootstrap-tagsinput,
+.rb-status .bootstrap-tagsinput input,
+.rb-status .form-control,
+.rb-status .form-control:focus {
+    border: 0;
+    border-color: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.rb-status .tab-content .tab-pane {
+    border-top: 1px dashed #BDC7D8;
+}
+
+.rb-status .panel-footer {
+    padding: 0;
+    background-color: #F6F7F8;
+    border-top: 1px solid #ddd;
+}
+
+.rb-status .panel-footer .rb-attach {
+    float: left;
+}
+.rb-status .panel-footer .rb-attach .btn-default {
+    padding: 13px 12px;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    color: #A2A5AB
+}
+.rb-status .panel-footer .rb-attach .btn-default.active {
+    background-color: #fff;
+    color: #444;
+    box-shadow: none;
+    border: 1px solid #E0E0E0;
+    border-top: none;
+    border-bottom: none;
+}
+.rb-status .panel-footer .rb-attach .btn-default.active:first-child{
+    border-left: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.rb-status .rb-upload-file-selector {
+    display:none;   
+}
+
+.rb-status .label-info {
+    background: #e9eaed;
+    border: 1px solid #9daccb;
+    border-radius: 2px;
+    color: #777 !important;
+}
+
+.rb-status .panel-footer .rb-action {
+    float: right;
+    padding: 8px
+}
+.rb-status .panel-footer .rb-action .btn-primary {
+    padding: 0 16px;
+    line-height: 22px;
+    font-weight: bold
+}
